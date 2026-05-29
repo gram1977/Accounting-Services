@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Accounting-Services/static/css/main.fcc96fde.css",
+    "main.js": "/Accounting-Services/static/js/main.f9b9013f.js",
+    "index.html": "/Accounting-Services/index.html",
+    "main.fcc96fde.css.map": "/Accounting-Services/static/css/main.fcc96fde.css.map",
+    "main.f9b9013f.js.map": "/Accounting-Services/static/js/main.f9b9013f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fcc96fde.css",
+    "static/js/main.f9b9013f.js"
+  ]
+}
