@@ -1,0 +1,14 @@
+{
+  "name": "accounting-services-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "format:env": "prettier --plugin prettier-plugin-env backend/.env frontend/.env --write"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-env": "^0.4.3"
+  }
+}

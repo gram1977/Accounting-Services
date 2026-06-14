@@ -96,6 +96,473 @@
   color: #4b5563;
 }
 
+.AboutPage {
+  width: 100%;
+  max-width: min(100%, 1200px);
+}
+
+.AboutHero {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.18), transparent 40%),
+    radial-gradient(circle at 70% 75%, rgba(99, 102, 241, 0.22), transparent 42%),
+    linear-gradient(160deg, #05144d 0%, #0a2b8a 100%);
+  border-radius: 22px;
+  padding: 34px;
+  color: #f8fafc;
+  box-shadow: 0 22px 42px rgba(15, 23, 42, 0.28);
+  text-align: left;
+}
+
+.AboutContent h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.12;
+  color: #ffffff;
+}
+
+.AboutContent p {
+  margin-top: 14px;
+  color: #dbeafe;
+  max-width: 52ch;
+}
+
+.AboutEyebrow {
+  margin-bottom: 10px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem !important;
+  color: #93c5fd !important;
+  font-weight: 700;
+}
+
+.AboutHighlights {
+  margin: 18px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 8px;
+  color: #e2e8f0;
+}
+
+.AboutCtas {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.AboutPrimaryButton,
+.AboutSecondaryButton {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.AboutPrimaryButton {
+  background: #34d399;
+  color: #032028;
+}
+
+.AboutPrimaryButton:hover {
+  background: #10b981;
+}
+
+.AboutSecondaryButton {
+  background: rgba(148, 163, 184, 0.2);
+  color: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+}
+
+.AboutSecondaryButton:hover {
+  background: rgba(148, 163, 184, 0.34);
+}
+
+.AboutCards {
+  align-self: center;
+  display: grid;
+  gap: 12px;
+}
+
+.AboutCard {
+  background: rgba(248, 250, 252, 0.98);
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.36);
+  padding: 14px 16px;
+  box-shadow: 0 10px 20px rgba(2, 6, 23, 0.18);
+}
+
+.AboutCardLabel {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  color: #475569;
+  font-weight: 700;
+}
+
+.AboutCard h3 {
+  margin: 2px 0 0;
+  color: #0b3a86;
+  font-size: 1.05rem;
+}
+
+.AboutShowcase {
+  margin-top: 26px;
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 30px;
+  border-radius: 24px;
+  padding: 34px;
+  text-align: left;
+  color: #f8fafc;
+  background:
+    radial-gradient(circle at 22% 36%, rgba(59, 130, 246, 0.25) 0%, transparent 55%),
+    radial-gradient(circle at 26% 40%, rgba(147, 197, 253, 0.12) 0%, transparent 35%),
+    linear-gradient(165deg, #08164a 0%, #1e3aab 100%);
+  box-shadow: 0 24px 42px rgba(15, 23, 42, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.AboutShowcase::before,
+.AboutShowcase::after {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border: 1px solid rgba(191, 219, 254, 0.18);
+  border-radius: 999px;
+  left: -90px;
+  top: -20px;
+  pointer-events: none;
+}
+
+.AboutShowcase::after {
+  width: 390px;
+  height: 390px;
+  left: -45px;
+  top: 30px;
+}
+
+.AboutShowcaseLeft,
+.AboutShowcaseRight {
+  position: relative;
+  z-index: 1;
+}
+
+.AboutShowcaseBrand {
+  margin: 0 0 18px !important;
+  color: #bfdbfe !important;
+  font-size: 1.8rem !important;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.AboutShowcaseLeft h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 4.4vw, 4rem);
+  line-height: 1.06;
+}
+
+.AboutShowcaseLeft h2 span {
+  color: #f97316;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 0 12px;
+}
+
+.AboutShowcaseLeft p {
+  margin-top: 18px;
+  color: #c7d2fe;
+  max-width: 40ch;
+}
+
+.AboutShowcaseActions {
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.AboutShowcasePrimary,
+.AboutShowcaseLink {
+  border: 0;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.AboutShowcasePrimary {
+  padding: 12px 20px;
+  background: #fb6a3e;
+  color: #ffffff;
+}
+
+.AboutShowcasePrimary:hover {
+  background: #ea580c;
+}
+
+.AboutShowcaseLink {
+  padding: 10px 0;
+  background: transparent;
+  color: #dbeafe;
+}
+
+.AboutShowcaseRight {
+  align-self: center;
+  display: grid;
+  gap: 12px;
+}
+
+.AboutShowcaseCard {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 12px 16px;
+  border: 1px solid #dbeafe;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.2);
+}
+
+.AboutShowcaseMeta {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 700;
+}
+
+.AboutShowcaseCard h3 {
+  margin: 2px 0 0;
+  color: #1e3a8a;
+  font-size: 1rem;
+}
+
+.AboutLightShowcase {
+  margin-top: 26px;
+  padding: 36px;
+  border-radius: 24px;
+  background: #eef3fa;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  text-align: left;
+}
+
+.AboutLightLeft h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.1;
+  color: #343c74;
+  max-width: 16ch;
+}
+
+.AboutLightLeft p {
+  margin-top: 16px;
+  color: #6b73a6;
+  max-width: 42ch;
+}
+
+.AboutLightEyebrow {
+  margin: 0 0 10px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4f86c6 !important;
+  font-size: 0.8rem !important;
+  font-weight: 700;
+}
+
+
+.AboutLightPrimary {
+  margin-top: 18px;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 20px;
+  background: #ff6a22;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.AboutLightPrimary:hover {
+  background: #ea580c;
+}
+
+.AboutLightProof {
+  margin-top: 20px !important;
+  color: #6b73a6 !important;
+  font-weight: 600;
+}
+
+.AboutLightOrbit {
+  position: relative;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AboutOrbitRing {
+  width: min(100%, 430px);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  border: 4px solid #c6dff5;
+  background: #d7e9f7;
+}
+
+.AboutOrbitCenter {
+  position: absolute;
+  width: 78px;
+  height: 78px;
+  border-radius: 999px;
+  background: #3c9ddd;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1.8rem;
+  display: grid;
+  place-items: center;
+}
+
+.AboutOrbitCard {
+  position: absolute;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 12px 14px;
+  min-width: 140px;
+  border: 1px solid #d6e6f6;
+  box-shadow: 0 10px 22px rgba(51, 65, 85, 0.18);
+}
+
+.AboutOrbitCard span {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8b97b6;
+  font-weight: 700;
+}
+
+.AboutOrbitCard h3 {
+  margin: 4px 0 0;
+  color: #33407f;
+  font-size: 0.95rem;
+}
+
+.AboutOrbitCardTopLeft {
+  top: 36px;
+  left: 26px;
+}
+
+.AboutOrbitCardTopRight {
+  top: 22px;
+  right: 18px;
+}
+
+.AboutOrbitCardBottomLeft {
+  bottom: 32px;
+  left: 10px;
+}
+
+.AboutOrbitCardBottomRight {
+  bottom: 28px;
+  right: 10px;
+}
+
+.ReportsContainer {
+  margin-top: 24px;
+  overflow-x: auto;
+}
+
+.CustomerTable {
+  width: 100%;
+  min-width: 900px;
+  max-width: 1000px;
+  margin: 20px auto 0;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 24px rgba(17, 24, 39, 0.08);
+  table-layout: auto;
+}
+
+.CustomerTable th,
+.CustomerTable td {
+  border: 1px solid #cbd5e1;
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.CustomerTable th:first-child,
+.CustomerTable td:first-child {
+  width: 20px;
+  text-align: center;
+}
+
+
+.CustomerTable th {
+  background: #e2e8f0;
+  color: #111827;
+  font-weight: 700;
+}
+
+.CustomerTable tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.CustomerTable tbody tr:hover {
+  background: #eef2ff;
+}
+
+.ReportsActions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.DeleteButton {
+  display: inline-block;
+  margin: 0;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #dc2626;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.DeleteButton:hover {
+  background: #b91c1c;
+}
+
+.DownloadButton {
+  display: inline-block;
+  margin: 0;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 10px;
+  background: #0f766e;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.DownloadButton:hover {
+  background: #115e59;
+}
+
 .ServicesImage {
   width: min(100%, 640px);
   height: auto;
@@ -187,6 +654,68 @@
 
   .AppMain {
     padding: 32px 20px 48px;
+  }
+
+  .AboutHero {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .AboutCards {
+    margin-top: 6px;
+  }
+
+  .AboutShowcase {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .AboutLightShowcase {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+
+  .AboutLightOrbit {
+    min-height: 360px;
+  }
+
+  .AboutOrbitCard {
+    min-width: 120px;
+  }
+
+  .AboutOrbitCardTopLeft {
+    top: 30px;
+    left: 0;
+  }
+
+  .AboutOrbitCardTopRight {
+    top: 14px;
+    right: 0;
+  }
+
+  .AboutOrbitCardBottomLeft {
+    bottom: 26px;
+    left: 0;
+  }
+
+  .AboutOrbitCardBottomRight {
+    bottom: 24px;
+    right: 0;
+  }
+
+  .AboutShowcase::before,
+  .AboutShowcase::after {
+    width: 280px;
+    height: 280px;
+    left: -80px;
+    top: -30px;
+  }
+
+  .AboutShowcase::after {
+    width: 220px;
+    height: 220px;
+    left: -45px;
+    top: 0;
   }
 
   .ContactFooter {

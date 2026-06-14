@@ -4,6 +4,7 @@ import Services from "./Services";
 import About from "./About";
 import Contact from "./Contact";
 import Payments from "./Payments";
+import Reports from "./Reports";
 
 function Home() {
   return (
@@ -26,9 +27,10 @@ function AppLayout() {
             Home
           </NavLink>
           <NavLink to="/services">Services</NavLink>
-          <NavLink to="/payments">Payments</NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/contact">Contact</NavLink>
+          <NavLink to="/reports">Reports</NavLink>
+          <NavLink to="/payments">Payments</NavLink>
         </nav>
       </aside>
 
@@ -50,9 +52,10 @@ function App() {
         <Route path="/" element={<AppLayout />}>
           <Route index element={<Home />} />
           <Route path="services" element={<Services />} />
-          <Route path="payments" element={<Payments />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="reports" element={<Reports />} />
+          <Route path="payments" element={<Payments />} />
         </Route>
       </Routes>
     </HashRouter>
