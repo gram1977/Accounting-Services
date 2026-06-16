@@ -28,6 +28,13 @@ const morganFormat = process.env.NODE_ENV === "production" ? "combined" : "dev";
 app.use(morgan(morganFormat));
 app.use(routes);
 
+app.get("/", (_req, res) => {
+  res.status(200).json({
+    message: "Accounting Services backend is running",
+    health: "/health",
+  });
+});
+
 app.get("/health", (_req, res) => {
   res.status(200).json({ ok: true });
 });
