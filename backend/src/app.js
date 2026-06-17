@@ -5,7 +5,43 @@ const routes = require("./routes");
 
 const app = express();
 
-app.use(cors());
+const parseOrigins = (value) =>
+  (value || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
+
+const productionOrigins = parseOrigins(process.env.CORS_ALLOWED_ORIGINS);
+
+const developmentOriginsEnv = parseOrigins(process.env.CORS_ALLOWED_ORIGINS_DEV);
+
+const developmentOrigins = developmentOriginsEnv.length
+  ? developmentOriginsEnv
+  : ["http://localhost:3000", "http://localhost:3001"];
+
+const allowedOrigins =
+  process.env.NODE_ENV === "production"
+    ? productionOrigins
+    : developmentOrigins;
+
+const corsOptions =
+  process.env.NODE_ENV === "production"
+    ? {
+        origin(origin, callback) {
+          if (!origin || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+          }
+
+          return callback(new Error("Not allowed by CORS"));
+        },
+        credentials: true,
+      }
+    : {
+        origin: developmentOrigins,
+        credentials: true,
+      };
+
+app.use(cors(corsOptions));
 //Middleware: built-in middleware: Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 
