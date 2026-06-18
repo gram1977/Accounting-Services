@@ -1,10 +1,25 @@
 import { useState } from "react";
 
-const API_URL =
-  process.env.REACT_APP_API_URL ||
-  (window.location.hostname === "localhost"
-    ? "http://localhost:4000"
-    : "https://accounting-services-backend-g6cyg2h0amajb0aw.southindia-01.azurewebsites.net");
+const DEFAULT_PROD_API_URL =
+  "https://accounting-services-backend-g6cyg2h0amajb0aw.southindia-01.azurewebsites.net";
+
+const API_URL = (() => {
+  const configuredApiUrl = process.env.REACT_APP_API_URL?.trim();
+  const isLocalHostRuntime = window.location.hostname === "localhost";
+  const pointsToLocalHost =
+    configuredApiUrl?.includes("localhost") ||
+    configuredApiUrl?.includes("127.0.0.1");
+
+  if (isLocalHostRuntime) {
+    return configuredApiUrl || "http://localhost:4000";
+  }
+
+  if (configuredApiUrl && !pointsToLocalHost) {
+    return configuredApiUrl;
+  }
+
+  return DEFAULT_PROD_API_URL;
+})();
 
 function Contact() {
   const [submitMessage, setSubmitMessage] = useState("");
