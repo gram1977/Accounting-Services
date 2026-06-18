@@ -38,6 +38,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: accounting-services-backend-g6cyg2h0amajb0aw
+          app-name: Accounting-Services-Backend
           publish-profile: ${{ secrets.AZURE_BACKEND_WEBAPP_PUBLISH_PROFILE }}
           package: backend-release.zip
