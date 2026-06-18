@@ -86,7 +86,43 @@ app.use((req, res) => {
 app.use((err, req, res, next) => {
   console.error(`[ERROR] ${req.method} ${req.originalUrl}`);
   console.error(err.stack);
-  res.status(500).json({ message: "Internal Server Error" });
+
+  /* 
+  A headers-sent guard first:
+  */
+  if (res.headersSent) {
+    return next(err);
+  }
+
+  /* 
+  CORS-specific handling next
+  */
+  if (err && err.message === "Not allowed by CORS") {
+    return res.status(403).json({ message: "Forbidden by CORS policy" });
+  }
+
+  /* 
+  bad-JSON handling after that:
+  */
+  if (err?.type === "entity.parse.failed") {
+    return res.status(400).json({ message: "Invalid JSON payload" });
+  }
+
+  /* 
+  passthrough for explicit status errors:
+  */
+  const statusCode = err?.statusCode || err?.status;
+
+  if (statusCode) {
+    return res.status(statusCode).json({
+      message: err.message || "Request failed",
+    });
+  }
+
+  /* 
+  Defualt error handling: final unknown-error fallback to 500:
+  */
+  return res.status(500).json({ message: "Internal Server Error" });
 });
 
 module.exports = app;
