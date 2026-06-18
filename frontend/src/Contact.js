@@ -1,5 +1,11 @@
 import { useState } from "react";
 
+const API_URL =
+  process.env.REACT_APP_API_URL ||
+  (window.location.hostname === "localhost"
+    ? "http://localhost:4000"
+    : "https://accounting-services-backend-g6cyg2h0amajb0aw.southindia-01.azurewebsites.net");
+
 function Contact() {
   const [submitMessage, setSubmitMessage] = useState("");
 
@@ -18,7 +24,6 @@ function Contact() {
     };
 
     try {
-      const API_URL = process.env.REACT_APP_API_URL || "http://localhost:4000";
       const response = await fetch(`${API_URL}/admin/`, {
         method: "POST",
         headers: {
