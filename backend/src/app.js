@@ -72,7 +72,17 @@ app.get("/", (_req, res) => {
 });
 
 app.get("/health", (_req, res) => {
-  res.status(200).json({ ok: true });
+  const mongoose = require("mongoose");
+  // readyState: 0=disconnected, 1=connected, 2=connecting, 3=disconnecting
+  const dbState = mongoose.connection.readyState;
+  const dbOk = dbState === 1;
+
+  const status = dbOk ? 200 : 503;
+  res.status(status).json({
+    ok: dbOk,
+    db: dbOk ? "connected" : "disconnected",
+    env: process.env.NODE_ENV || "development",
+  });
 });
 
 // 404 handler (no route matched)
