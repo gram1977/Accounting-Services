@@ -67,7 +67,7 @@ const AdminLogin = ({ onLoginSuccess }) => {
 
         alert("Login successful!");
         // Redirect to Reports page or dashboard
-        window.location.href = "#/Reports";
+        window.location.href = "#/reports";
       }
     } catch (err) {
       if (err.response && err.response.data) {
