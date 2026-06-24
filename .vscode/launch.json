@@ -1,0 +1,56 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach Node Process",
+      "port": 9229,
+      "request": "attach",
+      "skipFiles": ["<node_internals>/**"],
+      "type": "node"
+    },
+    {
+      "name": "Run Current File",
+      "type": "node",
+      "request": "launch",
+      "program": "${file}"
+    },
+    {
+      "name": "Debug React App",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "outputCapture": "console",
+      "skipFiles": [
+        "<node_internals>/**",
+        "${workspaceFolder}/node_modules/**",
+        "**/react-refresh/**",
+        "**/webpack/**",
+        "**/hot/**",
+        "**/bootstrap*",
+        "**/react-dev-tools/**",
+        "**/webpack-dev-server/**"
+      ]
+    },
+    {
+      "name": "Debug Express App",
+      "type": "node",
+      "request": "launch",
+      "program": "${file}",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**",
+        "**/express/**",
+        "**/application.js",
+        "**/response.js",
+        "**/layer.js",
+        "**/route.js",
+        "**/index.js"
+      ]
+    }
+  ]
+}

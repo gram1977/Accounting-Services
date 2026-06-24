@@ -23,6 +23,11 @@ const customerSchema = new mongoose.Schema(
       trim: true,
       lowercase: true,
     },
+    notes: {
+      type: String,
+      trim: true, 
+      default: "",
+    },
   },
   {
     timestamps: true,

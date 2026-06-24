@@ -36,10 +36,11 @@ function Contact() {
       address: formData.get("address")?.toString().trim() || "",
       contactNumber: formData.get("contactNumber")?.toString().trim() || "",
       email: formData.get("email")?.toString().trim() || "",
+      notes: formData.get("notes")?.toString().trim() || "",
     };
 
     try {
-      const response = await fetch(`${API_URL}/admin/`, {
+      const response = await fetch(`${API_URL}/api/admin/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -100,6 +101,9 @@ function Contact() {
           autoComplete="email"
           required
         />
+
+        <label htmlFor="notes">Notes</label>
+        <textarea id="notes" name="notes" rows={4} />
 
         <button type="submit">Submit</button>
         {submitMessage ? <p>{submitMessage}</p> : null}

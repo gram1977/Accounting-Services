@@ -1,8 +1,12 @@
 const express = require("express");
 const contactAdminRoutes = require("./admin/Contact");
+const authAdminRoutes = require("./admin/auth");
 
 const router = express.Router();
 
-router.use("/admin", contactAdminRoutes);
+console.log('ran index.js');
+router.use("/api/admin", authAdminRoutes);
+router.use("/api/admin", contactAdminRoutes);
+
 
 module.exports = router;

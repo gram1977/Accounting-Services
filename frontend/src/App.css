@@ -56,10 +56,10 @@
 .AppMain {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  padding: 48px 48px 92px;
+  padding: 48px 48px 48px;
 }
 
 .AppHeader {
@@ -592,7 +592,8 @@
   color: #1f2937;
 }
 
-.ContactForm input {
+.ContactForm input,
+.ContactForm textarea {
   width: 100%;
   padding: 11px 12px;
   border: 1px solid #cbd5e1;
@@ -600,9 +601,11 @@
   font-size: 0.95rem;
   color: #111827;
   background: #ffffff;
+  resize: vertical;
 }
 
-.ContactForm input:focus {
+.ContactForm input:focus,
+.ContactForm textarea:focus {
   border-color: #111827;
   outline: none;
   box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.12);
@@ -625,10 +628,7 @@
 }
 
 .ContactFooter {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: 32px;
   font-size: 0.98rem;
   font-weight: 700;
   color: #111827;
@@ -653,7 +653,8 @@
   }
 
   .AppMain {
-    padding: 32px 20px 48px;
+    padding: 32px 20px;
+    align-items: flex-start;
   }
 
   .AboutHero {
@@ -718,8 +719,19 @@
     top: 0;
   }
 
+  .CustomerTable {
+    min-width: auto;
+    margin: 20px 0 0;
+    font-size: 0.85rem;
+  }
+
+  .CustomerTable th,
+  .CustomerTable td {
+    padding: 8px 10px;
+  }
+
   .ContactFooter {
-    bottom: 16px;
+    margin-top: 24px;
     text-align: center;
   }
 }

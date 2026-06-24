@@ -1,6 +1,7 @@
 const dotenv = require("dotenv");
 const path = require("path");
 
+console.log('ran server.js');
 // Load environment variables from .env file
 require("dotenv").config({
   path: require("path").resolve(__dirname, "../.env"),
@@ -8,12 +9,23 @@ require("dotenv").config({
 
 const app = require("./app");
 const connectDB = require("./config/db");
+const Login = require("./models/auth");
+
+const seedAdmin = async () => {
+  await Login.findOneAndUpdate(
+    { email: "admin@admin.com", role: "admin" },
+    { email: "admin@admin.com", password: "admin", role: "admin" },
+    { upsert: true, new: true }
+  );
+  console.log("Admin seeded");
+};
 
 const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
   try {
     await connectDB();
+    await seedAdmin();
 
     // Start listening only after MongoDB is connected.
     app.listen(PORT, () => {

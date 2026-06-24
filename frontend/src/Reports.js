@@ -35,7 +35,7 @@ function Reports() {
       setUiStatusMessage("");
 
       try {
-        const response = await fetch(`${API_URL}/admin/`);
+        const response = await fetch(`${API_URL}/api/admin/`);
         if (!response.ok) {
           setDatabaseStatusMessage(
             "Failed to fetch customer data from Database",
@@ -112,7 +112,7 @@ function Reports() {
     try {
       await Promise.all(
         selectedCustomerIds.map(async (customerId) => {
-          const response = await fetch(`${API_URL}/admin/${customerId}`, {
+          const response = await fetch(`${API_URL}/api/admin/${customerId}`, {
             method: "DELETE",
           });
 
@@ -161,6 +161,7 @@ function Reports() {
                 <th>Address</th>
                 <th>Email</th>
                 <th>Contact Number</th>
+                <th>Notes</th>                
               </tr>
             </thead>
             <tbody>
@@ -178,6 +179,7 @@ function Reports() {
                   <td>{customer.address}</td>
                   <td>{customer.email}</td>
                   <td>{customer.contactNumber}</td>
+                  <td>{customer.notes}</td>                  
                 </tr>
               ))}
             </tbody>
